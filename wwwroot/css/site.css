@@ -1,0 +1,391 @@
+/* =========================
+   COLOR SYSTEM (LIGHT)
+========================= */
+:root {
+    --bg-main: #f5f7fb; /* page background */
+    --bg-surface: #ffffff; /* cards / forms */
+    --bg-soft: #eef2ff; /* table headers / subtle surfaces */
+
+    --primary: #2563eb; /* Blue main */
+    --secondary: #14b8a6; /* Teal accent */
+    --accent: #f59e0b; /* Amber highlight */
+
+    --text-main: #0f172a; /* main text */
+    --text-muted: #64748b; /* muted text */
+
+    --border: rgba(0,0,0,0.08); /* subtle borders */
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    background-color: var(--bg-surface);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.navbar-text {
+    color: var(--text-muted);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-muted);
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: var(--secondary);
+    }
+
+.navbar-nav .active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Optional underline highlight */
+.navbar-nav .nav-link.active::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--accent);
+    border-radius: 3px;
+    margin-top: 2px;
+}
+
+/* Logout button */
+.logout-btn {
+    color: #ef4444;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        opacity: 0.95;
+        transform: translateY(-1px);
+    }
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    background-color: var(--bg-surface);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+    .card h4 {
+        color: var(--primary);
+        font-weight: 700;
+    }
+
+    .card p {
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--secondary);
+    }
+
+/* =========================
+   TABLES
+========================= */
+.table {
+    background-color: var(--bg-surface);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    .table th {
+        background-color: var(--bg-soft);
+        color: var(--text-main);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .table td {
+        color: var(--text-muted);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(20, 184, 166, 0.08);
+    }
+
+/* =========================
+   AUTH PAGES (LOGIN / REGISTER)
+========================= */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.auth-card {
+    width: 420px;
+    background-color: var(--bg-surface);
+    border-radius: 18px;
+    padding: 40px 30px; /* extra padding for spacious feel */
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Form groups spacing */
+.form-group, .form-check {
+    margin-bottom: 20px;
+}
+
+.auth-title {
+    text-align: center;
+    font-size: 30px;
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+/* Input fields */
+.form-control {
+    background-color: #ffffff;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+    .form-control:focus {
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
+    }
+
+/* Center submit buttons */
+.auth-card .btn-primary {
+    display: inline-block;
+    width: auto;
+    min-width: 120px;
+}
+
+/* Footer spacing */
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+    .auth-footer a {
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .auth-footer a:hover {
+            color: var(--accent);
+        }
+
+/* =========================
+   ERRORS
+========================= */
+.text-danger {
+    color: #dc2626;
+}
+
+/* =========================
+   ADMIN DASHBOARD STYLES
+========================= */
+
+.admin-card {
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+    .admin-card h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Card color variants */
+.users-card {
+    border-left: 6px solid #4f9cf9;
+}
+
+    .users-card .stat-number {
+        color: #4f9cf9;
+    }
+
+.active-users-card {
+    border-left: 6px solid #28c76f;
+}
+
+    .active-users-card .stat-number {
+        color: #28c76f;
+    }
+
+.lost-card {
+    border-left: 6px solid #ea5455;
+}
+
+    .lost-card .stat-number {
+        color: #ea5455;
+    }
+
+.found-card {
+    border-left: 6px solid #00cfe8;
+}
+
+    .found-card .stat-number {
+        color: #00cfe8;
+    }
+
+/* =========================
+   ADMIN TABLE
+========================= */
+
+.admin-table {
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+    .admin-table thead {
+        background-color: #f4f6f8;
+    }
+
+    .admin-table th {
+        font-weight: 600;
+        color: #444;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .admin-table td {
+        color: #555;
+        vertical-align: middle;
+    }
+
+    .admin-table tbody tr:hover {
+        background-color: #f9fbfc;
+    }
+
+/* Badges */
+.badge-lost {
+    background-color: #ffe5e5;
+    color: #d63031;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.badge-found {
+    background-color: #e6fff4;
+    color: #1e8449;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* =========================
+   ITEMS LIST TABLE
+========================= */
+
+.items-table {
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+    .items-table thead {
+        background-color: #f4f6f8;
+    }
+
+    .items-table th {
+        font-weight: 600;
+        color: #444;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .items-table td {
+        color: #555;
+        vertical-align: middle;
+    }
+
+    .items-table tbody tr:hover {
+        background-color: #f9fbfc;
+    }
+
+/* Reuse badges from admin dashboard */
+.badge-lost {
+    background-color: #ffe5e5;
+    color: #d63031;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.badge-found {
+    background-color: #e6fff4;
+    color: #1e8449;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* Action button */
+.btn-outline-primary {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+hr {
+    opacity: 0.1;
+}

@@ -1,0 +1,44 @@
+﻿@model SmartLostandFoundSystem.Models.ViewModel.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="auth-title">Welcome Back</h2>
+
+        <form asp-action="Login" method="post">
+
+            <div class="form-group mb-4">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" placeholder="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-4">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <label asp-for="RememberMe" class="form-check-label">Remember Me</label>
+            </div>
+
+            <!-- Centered button -->
+            <div class="text-center mb-3">
+                <button type="submit" class="btn-primary px-5">Login</button>
+            </div>
+        </form>
+
+        <div class="auth-footer mt-3">
+            Don’t have an account? <a asp-action="Register">Register</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

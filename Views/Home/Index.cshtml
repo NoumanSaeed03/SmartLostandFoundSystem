@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- HERO SECTION -->
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h1 class="display-5 fw-bold">
+                Find What You Lost.<br />
+                Return What You Found.
+            </h1>
+
+            <p class="text-muted mt-3">
+                Smart Lost & Found System helps users report lost and found items,
+                match them intelligently, and reconnect people with their belongings.
+            </p>
+
+            <div class="mt-4">
+                <a asp-controller="Items" asp-action="Create" class="btn btn-primary me-2">
+                    Report Lost Item
+                </a>
+                <a asp-controller="Items" asp-action="Create" class="btn btn-outline-primary">
+                    Report Found Item
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-6 text-center d-none d-md-block">
+            <img src="~/images/Logo.png" class="img-fluid" alt="Lost and Found" />
+        </div>
+    </div>
+</div>
+
+<hr class="my-5" />
+
+<!-- WHY SECTION -->
+<div class="container py-4">
+    <h2 class="text-center mb-4">Why Use Smart Lost & Found?</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 p-4 text-center shadow-sm">
+                <h5 class="fw-bold">Easy Reporting</h5>
+                <p class="text-muted">
+                    Quickly report lost or found items with essential details.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 p-4 text-center shadow-sm">
+                <h5 class="fw-bold">Smart Matching</h5>
+                <p class="text-muted">
+                    Our system finds potential matches using location, date and category.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 p-4 text-center shadow-sm">
+                <h5 class="fw-bold">Secure Platform</h5>
+                <p class="text-muted">
+                    Only authenticated users can access and manage item reports.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-5" />
+
+<!-- HOW IT WORKS -->
+<div class="container py-4">
+    <h2 class="text-center mb-4">How It Works</h2>
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <span class="badge bg-primary fs-6 mb-2">Step 1</span>
+            <h5 class="fw-bold mt-2">Report an Item</h5>
+            <p class="text-muted">
+                Add item details such as category, color, location and date.
+            </p>
+        </div>
+
+        <div class="col-md-4">
+            <span class="badge bg-warning fs-6 mb-2">Step 2</span>
+            <h5 class="fw-bold mt-2">Find Matches</h5>
+            <p class="text-muted">
+                The system automatically matches lost and found items.
+            </p>
+        </div>
+        /
+        <div class="col-md-4">
+            <span class="badge bg-success fs-6 mb-2">Step 3</span>
+            <h5 class="fw-bold mt-2">Reconnect</h5>
+            <p class="text-muted">
+                Contact the user and recover the item securely.
+            </p>
+        </div>
+    </div>
+</div>
+
+<hr class="my-5" />
+
+<!-- COMMUNITY MESSAGE -->
+<div class="container py-4 text-center">
+    <blockquote class="blockquote">
+        <p class="mb-3">
+            “Every returned item brings relief and happiness.
+            Be part of a community that helps others.”
+        </p>
+    </blockquote>
+</div>
+
+<!-- CALL TO ACTION -->
+<div class="container py-5 t//ext-center">
+    <h3 class="fw-bold mb-3">Ready to Get Started?</h3>
+    <p class="text-muted mb-4">
+        Report a lost or found item and help bring belongings back home.
+    </p>
+
+    <a asp-controller="Item" asp-action="Create" class="btn btn-lg btn-primary me-2">
+        Get Started
+    </a>
+</div>
+
+<hr class="my-5" />/
+
+<footer class="text-center py-3 text-muted small">
+    © @DateTime.Now.Year — Made by <strong>Amna</strong> & <strong>Nouman</strong>
+</footer>
+

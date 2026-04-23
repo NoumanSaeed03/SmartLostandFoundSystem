@@ -1,0 +1,82 @@
+﻿@model SmartLostandFoundSystem.Models.AdminViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2 class="mb-4">Admin Dashboard</h2>
+
+<div class="row g-4">
+    <div class="col-md-3">
+        <div class="card p-4 text-center admin-card users-card">
+            <h4>Total Users</h4>
+            <p class="stat-number">@Model.TotalUser</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center admin-card active-users-card">
+            <h4>Active Users</h4>
+            <p class="stat-number">@Model.ActiveUser</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center admin-card lost-card">
+            <h4>Lost Items</h4>
+            <p class="stat-number">@Model.TotalLostItem</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 text-center admin-card found-card">
+            <h4>Found Items</h4>
+            <p class="stat-number">@Model.TotalFoundItem</p>
+        </div>
+    </div>
+</div>
+
+<hr class="my-4" />
+
+<h3 class="mb-3">All Items (Lost & Found)</h3>
+
+<div class="table-responsive">
+    <table class="table admin-table mt-2">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Items.Any())
+            {
+                <tr>
+                    <td colspan="5" class="text-center py-4 text-muted">
+                        No items found
+                    </td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Category</td>
+                        <td>@item.Location</td>
+                        <td>
+                            <span class="badge @(item.IsLost ? "badge-lost" : "badge-found")">
+                                @(item.IsLost ? "Lost" : "Found")
+                            </span>
+                        </td>
+                        <td>@item.Date.ToShortDateString()</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

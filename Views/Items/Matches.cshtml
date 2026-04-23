@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SmartLostAndFound.Models.Item>
+
+@{
+    ViewData["Title"] = "Possible Matches";
+}
+
+<h4 class="mb-3">Possible Matches</h4>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning py-2">
+        No matching items found.
+    </div>
+}
+else
+{
+    <table class="table table-sm table-hover table-bordered align-middle">
+        <thead class="table-light text-muted">
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Color</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Contact</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Category</td>
+                    <td>@item.Location</td>
+                    <td>@item.Color</td>
+                    <td>@item.Date.ToString("dd-MM-yyyy")</td>
+
+                    <td>
+                        @if (item.IsLost)
+                        {
+                            <span class="text-danger">Lost</span>
+                        }
+                        else
+                        {
+                            <span class="text-success">Found</span>
+                        }
+                    </td>
+
+                    <td>@item.Contact</td>
+                    <td>@item.Address</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+<a asp-action="MyItem" class="text-decoration-none text-secondary">
+    ← Back to My Items
+</a>

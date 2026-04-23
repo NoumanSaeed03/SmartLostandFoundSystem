@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SmartLostAndFound.Models.Item>
+
+@{
+    ViewData["Title"] = "Lost Items";
+}
+
+<h2 class="text-success">Lost Items</h2>
+
+@if (!Model.Any())
+{
+    <p>No Lost items available.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-success">
+            <tr>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Color</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Category</td>
+                    <td>@item.Color</td>
+                    <td>@item.Location</td>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>
+                        <a asp-action="Matches" asp-route-id="@item.Id" class="btn btn-primary btn-sm">
+                            Find Matches
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
